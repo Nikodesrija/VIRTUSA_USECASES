@@ -144,7 +144,7 @@ where actual_delivery_date>promised_date;
 ```
 <p align="center"> <img src="OUTPUTS/USECASES/query1.png" width="45%" /> </p>
 
-```
+```sql
 -- Performance Ranking
 select p.partner_name,count(*) as shipments_count,
 sum(case when s.shipment_status='Delivered' then 1 else 0 end) as Successful,
@@ -165,7 +165,7 @@ limit 1;
 ```
 <p align="center"> <img src="OUTPUTS/USECASES/query3.png" width="45%" /> </p>
 
-```
+```sql
 -- partner scorecard
 select partner_name,round(successful_del*100.0/tot_shipments,2) as success_percent
 from(
@@ -186,10 +186,12 @@ as score
 order by delayed_shipments asc,success_percent desc;
 ```
 <p align="center"><img src="OUTPUTS/USECASES/query4.png" width="45%" /> </p>
+
 ---
+
 ## Python – OpsBot
 
-**Overview:**
+** Overview: **
 Analyzes logs and generates alerts.
 
 | ➤ Log Analysis                                        | ➤ Summary                                             |
