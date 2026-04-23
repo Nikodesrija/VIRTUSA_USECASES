@@ -17,13 +17,10 @@ A console-based system designed to manage library operations efficiently.
 
 📸 **Output Preview:**
 
-### ➤ Add Book
 <p align="center">
+	### ➤ Add Book
   <img src="OUTPUTS/MINI_PROJECTS/java1.png" width="45%" />
-</p>
-
-### ➤ Update Book
-<p align="center">
+	### ➤ Update Book
   <img src="OUTPUTS/MINI_PROJECTS/java2.png" width="45%" />
 </p>
 
@@ -65,20 +62,23 @@ A console-based system designed to manage library operations efficiently.
 A database-driven system that analyzes movie ratings and generates useful insights.
 
 🔹 **Key Queries:**
+### Top rated movies
 ```sql
--- Top rated movies
 SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM movies v
 JOIN ratings r ON v.movie_id = r.movie_id
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="70%" /> </p>
--- Genre popularity
+GROUP BY v.title
+ORDER BY avg_rating DESC
+LIMIT 3;
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" /> </p>
+### Genre popularity
 SELECT genre, COUNT(*) AS total
 FROM movies
 GROUP BY genre
 ORDER BY total DESC
 LIMIT 1;
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="70%" /> </p>
--- Recommendation based on similar users
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> </p>
+### Recommendation based on similar users
 SELECT DISTINCT v.title
 FROM Ratings r
 JOIN movies v ON r.movie_id = v.movie_id
@@ -93,22 +93,21 @@ AND r.movie_id NOT IN (
     SELECT movie_id FROM ratings WHERE user_id = 1
 )
 AND r.rating >= 4;
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="70%" /> </p>
--- User behaviour patterns
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="45%" /> </p>
+### User behaviour patterns
 SELECT user_id, COUNT(*) AS movies_watched
 FROM watch_history
 GROUP BY user_id;
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="70%" /> </p>
--- Trending movies
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="45%" /> </p>
+### Trending movies
 SELECT v.title, COUNT(*) AS watch_count
 FROM watch_history w
 JOIN movies v ON w.movie_id = v.movie_id
 GROUP BY v.title
 ORDER BY watch_count DESC
 LIMIT 3;
-<p align="center"> <img src="...sql-query5.png" width="70%" />
 <p align="center">
-  <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="70%" />
+  <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="45%" />
 </p>
 ```
 ---
