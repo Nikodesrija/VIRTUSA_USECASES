@@ -40,16 +40,22 @@ A console-based system designed to manage library operations efficiently.
 **Overview:**  
 A database-driven system that analyzes movie ratings and generates useful insights.
 
-### 🔹 Top Rated Movies
-```sql
+
+Sql
+--Top Rated Movies
 SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM movies v
 JOIN ratings r ON v.movie_id = r.movie_id
 GROUP BY v.title
 ORDER BY avg_rating DESC
 LIMIT 3;
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> </p>
-🔹 Recommendation Query
+
+<p align="center"> 
+    <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> 
+</p>
+
+Sql
+--Recommendation Query
 SELECT DISTINCT v.title
 FROM Ratings r
 JOIN movies v ON r.movie_id = v.movie_id
