@@ -140,3 +140,79 @@ A simple application to track and analyze daily expenses.
 <p align="center">
   <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="45%" />
 </p>
+---
+
+# ⚙️ Section 2: Use Case Implementations
+
+---
+
+## ☕ Java – FinSafe (Digital Wallet)
+
+💳 **Overview:**  
+A console-based application that simulates a digital wallet with transaction validation.
+
+📸 **Output Preview:**
+
+### ➤ Deposit Money
+<p align="center">
+  <img src="OUTPUTS/USECASES/java1.png" width="45%" />
+</p>
+
+### ➤ Withdraw Money
+<p align="center">
+  <img src="OUTPUTS/USECASES/java2.png" width="45%" />
+</p>
+
+### ➤ Transaction History
+<p align="center">
+  <img src="OUTPUTS/USECASES/java3.png" width="45%" />
+</p>
+
+### ➤ Check Balance
+<p align="center">
+  <img src="OUTPUTS/USECASES/java4.png" width="45%" />
+</p>
+
+---
+
+## 🗄️ SQL – E-Commerce Logistics Tracker
+
+📦 **Overview:**  
+A database system used to track shipments and analyze delivery performance.
+
+🔹 **Key Queries:**
+
+```sql
+-- Delayed shipments
+SELECT *
+FROM Shipments
+WHERE ActualDeliveryDate > PromisedDate;
+<p align="center"> <img src="OUTPUTS/USECASES/query1.png" width="70%" /> </p>
+-- Performance Ranking
+select p.partner_name,count(*) as shipments_count,
+sum(case when s.shipment_status='Delivered' then 1 else 0 end) as Successful,
+sum(case when s.shipment_status='Returned' then 1 else 0 end) as returned from Partners p
+join Shipments s on p.partner_id=s.partner_id
+group by p.partner_name;
+<p align="center"> <img src="OUTPUTS/USECASES/query2.png" width="70%" /> </p>
+-- Zone Filter
+select target_city as destination_city,count(*) as total_orders
+from Shipments
+where promised_date>=curdate() -interval 30 day
+group by target_city
+order by total_orders desc
+limit 1;
+<p align="center"> <img src="OUTPUTS/USECASES/query3.png" width="70%" /> </p>
+```
+---
+##Python – OpsBot (Log Analyzer)
+
+🛡️ Overview:
+A Python automation tool that processes server logs and generates security alerts.
+
+📸 Output Preview:
+
+➤ Log File Analysis
+<p align="center"> <img src="OUTPUTS/USECASES/python1.png" width="45%" /> </p>
+➤ Show Summary 
+<p align="center"> <img src="OUTPUTS/USECASES/python2.png" width="45%" /> </p ```
