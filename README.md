@@ -66,6 +66,7 @@ A console-based system designed to manage library operations efficiently.
 A database-driven system that analyzes movie ratings and generates useful insights.
 
 🔹 **Key Queries:**
+sql
 -- Top rated movies
 SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM movies v
@@ -106,23 +107,36 @@ JOIN movies v ON w.movie_id = v.movie_id
 GROUP BY v.title
 ORDER BY watch_count DESC
 LIMIT 3;
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="70%" /> </p>
-Python – Smart Expense Tracker
+<p align="center"> <img src="...sql-query5.png" width="70%" />
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="70%" />
+</p>```
 
-💰 Overview:
+---
+
+## 🐍 Python – Smart Expense Tracker
+
+💰 **Overview:**  
 A simple application to track and analyze daily expenses.
 
-📸 Output Preview:
+📸 **Output Preview:**
 
-➤ Add Expense
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="45%" /> </p>
-➤ Show Expenses
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="45%" /> </p>
-➤ Category-wise Analysis
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="45%" /> </p>
-➤ Highest Spending Category
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="45%" /> </p>
+### ➤ Add Expense
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="45%" />
+</p>
 
-GROUP BY v.title
-ORDER BY avg_rating DESC
-LIMIT 3;
+### ➤ Show Expenses
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="45%" />
+</p>
+
+### ➤ Category-wise Analysis
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="45%" />
+</p>
+
+### ➤ Highest Spending Category
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="45%" />
+</p>
