@@ -4,6 +4,7 @@
 ![Java](https://img.shields.io/badge/Java-OOP-orange?logo=java)
 ![SQL](https://img.shields.io/badge/SQL-Database-green?logo=mysql)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+
 ---
 
 # 🧩 Section 1: Mini Projects
@@ -17,23 +18,44 @@ A console-based system designed to manage library operations efficiently.
 
 📸 **Output Preview:**
 
+### ➤ Add Book
 <p align="center">
-  **➤ Add Book**
-  <img src="OUTPUTS/MINI_PROJECTS/java1.jpg" width="45%" />
-   **➤ Update Book**
- <img src="OUTPUTS/MINI_PROJECTSs/java2.jpg" width="45%" />
-   **➤ Search Book**
-  <img src="OUTPUTS/MINI_PROJECTS/java3.jpg" width="45%" />
-    **➤ User Register**
-  <img src="OUTPUTS/MINI_PROJECTS/java4.jpg" width="45%" />
-    **➤ Issue Book**
-  <img src="OUTPUTS/MINI_PROJECTS/java5.jpg" width="45%" />
-    **➤ Show Books**
-  <img src="OUTPUTS/MINI_PROJECTS/java6.jpg" width="45%" />
-    **➤ Return Book**
-  <img src="OUTPUTS/MINI_PROJECTS/java7.jpg" width="45%" />
-    **➤ Remove Book**
-  <img src="OUTPUTS/MINI_PROJECTS/java8.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java1.png" width="45%" />
+</p>
+
+### ➤ Update Book
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java2.png" width="45%" />
+</p>
+
+### ➤ Search Book
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java3.png" width="45%" />
+</p>
+
+### ➤ User Register
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java4.png" width="45%" />
+</p>
+
+### ➤ Issue Book
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java5.png" width="45%" />
+</p>
+
+### ➤ Show Books
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java6.png" width="45%" />
+</p>
+
+### ➤ Return Book
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java7.png" width="45%" />
+</p>
+
+### ➤ Remove Book
+<p align="center">
+  <img src="OUTPUTS/MINI_PROJECTS/java8.png" width="45%" />
 </p>
 
 ---
@@ -45,62 +67,62 @@ A database-driven system that analyzes movie ratings and generates useful insigh
 
 🔹 **Key Queries:**
 -- Top rated movies
-select v.title,Round(avg(r.rating),2) as avg_rating
-from movies v
-join ratings r on v.movie_id=r.movie_id
-group by v.title
-order by avg_rating desc
-limit 3;
+SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
+FROM movies v
+JOIN ratings r ON v.movie_id = r.movie_id
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="70%" /> </p>
 -- Genre popularity
-select genre,count(*) as total
-from movies
-group by genre
-order by total desc
-limit 1;
+SELECT genre, COUNT(*) AS total
+FROM movies
+GROUP BY genre
+ORDER BY total DESC
+LIMIT 1;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="70%" /> </p>
--- recommend movies based on similar users
-select distinct v.title
-from Ratings r
-join movies v on r.movie_id=v.movie_id
-where r.user_id in(
-	select r2.user_id from ratings r1
-	join ratings r2
-	on r1.movie_id=r2.movie_id
-	where r1.user_id=1 and r1.rating>=4
-	and r2.user_id!=1) 
-and r.movie_id not in(
-	select movie_id from ratings
-    where user_id=1
+-- Recommendation based on similar users
+SELECT DISTINCT v.title
+FROM Ratings r
+JOIN movies v ON r.movie_id = v.movie_id
+WHERE r.user_id IN (
+    SELECT r2.user_id
+    FROM ratings r1
+    JOIN ratings r2 ON r1.movie_id = r2.movie_id
+    WHERE r1.user_id = 1 AND r1.rating >= 4
+    AND r2.user_id != 1
 )
-and r.rating>=4;
+AND r.movie_id NOT IN (
+    SELECT movie_id FROM ratings WHERE user_id = 1
+)
+AND r.rating >= 4;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="70%" /> </p>
----user behaviour patterns
-select user_id,count(*) as movies_watched
-from watch_history
-group by user_id;
+-- User behaviour patterns
+SELECT user_id, COUNT(*) AS movies_watched
+FROM watch_history
+GROUP BY user_id;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="70%" /> </p>
---trending movies
-select v.title,count(*) as watch_count
-from watch_history w
-join movies v on w.movie_id=v.movie_id
-group by v.title
-order by watch_count desc
-limit 3;
+-- Trending movies
+SELECT v.title, COUNT(*) AS watch_count
+FROM watch_history w
+JOIN movies v ON w.movie_id = v.movie_id
+GROUP BY v.title
+ORDER BY watch_count DESC
+LIMIT 3;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="70%" /> </p>
-🐍 Python – Smart Expense Tracker
+Python – Smart Expense Tracker
 
 💰 Overview:
 A simple application to track and analyze daily expenses.
 
 📸 Output Preview:
-<p align="center">
-  **➤ Add Expense**
-  <img src="OUTPUTS/MINI_PROJECTS/Python1.jpg" width="45%" />
-   **➤ Show Expense**
- <img src="OUTPUTS/MINI_PROJECTS/python2.jpg" width="45%" />
-   **➤ Category-wise Expense**
-  <img src="OUTPUTS/MINI_PROJECTS/python3.jpg" width="45%" />
-    **➤Highest Spending Category**
-  <img src="OUTPUTS/MINI_PROJECTS/python4.jpg" width="45%" />
-</p>
+
+➤ Add Expense
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="45%" /> </p>
+➤ Show Expenses
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="45%" /> </p>
+➤ Category-wise Analysis
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="45%" /> </p>
+➤ Highest Spending Category
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="45%" /> </p>
+
+GROUP BY v.title
+ORDER BY avg_rating DESC
+LIMIT 3;
