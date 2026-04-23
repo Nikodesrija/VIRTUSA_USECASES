@@ -19,21 +19,21 @@ A console-based system designed to manage library operations efficiently.
 
 <p align="center">
   **➤ Add Book**
-  <img src="Outputs/Mini_projects/java1.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java1.jpg" width="45%" />
    **➤ Update Book**
- <img src="Outputs/Mini_projects/java2.jpg" width="45%" />
+ <img src="OUTPUTS/MINI_PROJECTSs/java2.jpg" width="45%" />
    **➤ Search Book**
-  <img src="Outputs/Mini_projects/java3.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java3.jpg" width="45%" />
     **➤ User Register**
-  <img src="Outputs/Mini_projects/java4.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java4.jpg" width="45%" />
     **➤ Issue Book**
-  <img src="Outputs/Mini_projects/java5.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java5.jpg" width="45%" />
     **➤ Show Books**
-  <img src="Outputs/Mini_projects/java6.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java6.jpg" width="45%" />
     **➤ Return Book**
-  <img src="Outputs/Mini_projects/java7.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java7.jpg" width="45%" />
     **➤ Remove Book**
-  <img src="Outputs/Mini_projects/java8.jpg" width="45%" />
+  <img src="OUTPUTS/MINI_PROJECTS/java8.jpg" width="45%" />
 </p>
 
 ---
