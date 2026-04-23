@@ -69,3 +69,22 @@ where promised_date>=curdate() -interval 30 day
 group by target_city
 order by total_orders desc
 limit 1;
+
+-- partner scorecard
+select partner_name,round(successful_del*100.0/tot_shipments,2) as success_percent
+from(
+	select p.partner_name,count(s.shipment_id) as tot_shipments,
+		sum(case when s.actual_delivery_date>s.promised_date
+		then 1 else 0 
+		end) as delayed_shipments,
+		sum(case when s.shipment_status='Delivered'
+       then 1 else 0
+	   end) as successful_del,
+		sum(case when s.shipment_status='Returned'
+		then 1 else 0
+        end) as returned_del
+	from partners p
+	join shipments s on p.partner_id=s.partner_id
+	group by p.partner_name)
+as score
+order by delayed_shipments asc,success_percent desc;
