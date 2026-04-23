@@ -119,7 +119,7 @@ A simple application to track and analyze daily expenses.
 | ---------------------------------------------------------- | ---------------------------------------------------------- |
 | <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="100%"> | <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="100%"> |
 
-# 📂 #Section 2: Use Case Implementations
+# 📂 Section 2: Use Case Implementations
 ## Java – FinSafe (Digital Wallet)
 
 **Overview:**
@@ -191,7 +191,7 @@ order by delayed_shipments asc,success_percent desc;
 
 ## Python – OpsBot
 
-** Overview: **
+**Overview:**
 Analyzes logs and generates alerts.
 
 | ➤ Log Analysis                                        | ➤ Summary                                             |
