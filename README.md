@@ -10,7 +10,7 @@
 
 ---
 
-## ☕ Java – Library Management System
+## Java – Library Management System
 
 **Overview:**  
 A console-based system designed to manage library operations efficiently.
@@ -51,7 +51,19 @@ ORDER BY avg_rating DESC
 LIMIT 3;
 ```
 <p align="center"> 
-    <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> 
+    <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" />
+</p>
+
+```sql
+--- most popular genres
+select genre,count(*) as total
+from movies
+group by genre
+order by total desc
+limit 1;
+```
+<p align="center">
+<img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> 
 </p>
 
 ```Sql
@@ -71,7 +83,15 @@ AND r.movie_id NOT IN (
 )
 AND r.rating >= 4;
 ```
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="45%" /> </p>
+<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="45%" /> </p>
+
+```sql
+--- user behaviour patterns
+select user_id,count(*) as movies_watched
+from watch_history
+group by user_id;
+```
+<p align="center">  <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="45%" /> </p>
 
 ```sql
 ---Trending Movies
@@ -85,46 +105,94 @@ LIMIT 3;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="45%" /> </p>
 
 ----
-Python – Smart Expense Tracker
+## Python – Smart Expense Tracker
 
-Overview:
+**Overview:** 
 A simple application to track and analyze daily expenses.
 
-📸 Output Preview:
+📸 **Output Preview:**
 
-<p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="45%" /> </p> <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="45%" /> <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="45%" /> </p>
-Section 2: Use Case Implementations
-Java – FinSafe (Digital Wallet)
+| ➤ Add Expense                                              | ➤ Show Expenses                                            |
+| ---------------------------------------------------------- | ---------------------------------------------------------- |
+| <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="100%"> | <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="100%"> |
+| ➤ Category-wise Analysis                                   | ➤ Highest Spending Category                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- |
+| <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="100%"> | <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="100%"> |
 
-Overview:
+# 📂 #Section 2: Use Case Implementations
+## Java – FinSafe (Digital Wallet)
+
+**Overview:**
 A console-based application that simulates a digital wallet.
 
-<p align="center"> <img src="OUTPUTS/USECASES/java1.png" width="45%" /> <img src="OUTPUTS/USECASES/java2.png" width="45%" /> </p> <p align="center"> <img src="OUTPUTS/USECASES/java3.png" width="45%" /> <img src="OUTPUTS/USECASES/java4.png" width="45%" /> </p>
-SQL – E-Commerce Logistics Tracker
+| ➤ Deposit                                           | ➤ Withdraw                                          |
+| --------------------------------------------------- | --------------------------------------------------- |
+| <img src="OUTPUTS/USECASES/java1.png" width="100%"> | <img src="OUTPUTS/USECASES/java2.png" width="100%"> |
+| ➤ Transactions                                      | ➤ Balance                                           |
+| --------------------------------------------------- | --------------------------------------------------- |
+| <img src="OUTPUTS/USECASES/java3.png" width="100%"> | <img src="OUTPUTS/USECASES/java4.png" width="100%"> |
 
-Overview:
+
+## SQL – E-Commerce Logistics Tracker
+
+**Overview:**
 Tracks shipments and analyzes delivery performance.
 ```sql
---Delayed Shipments
-SELECT *
-FROM Shipments
-WHERE ActualDeliveryDate > PromisedDate;
+-- Delayed Shipment Query
+select * from Shipments
+where actual_delivery_date>promised_date;
 ```
-<p align="center"> <img src="OUTPUTS/USECASES/query1.png" width="45%" /> <img src="OUTPUTS/USECASES/query2.png" width="45%" /> </p>
+<p align="center"> <img src="OUTPUTS/USECASES/query1.png" width="45%" /> </p>
+
+```
+-- Performance Ranking
+select p.partner_name,count(*) as shipments_count,
+sum(case when s.shipment_status='Delivered' then 1 else 0 end) as Successful,
+sum(case when s.shipment_status='Returned' then 1 else 0 end) as returned from Partners p
+join Shipments s on p.partner_id=s.partner_id
+group by p.partner_name;
+```
+<p align="center"> <img src="OUTPUTS/USECASES/query2.png" width="45%" /> </p>
 
 ```sql
- Performance Analysis
-SELECT target_city, COUNT(*) AS total_orders
-FROM Shipments
-GROUP BY target_city
-ORDER BY total_orders DESC
-LIMIT 1;
+ -- Zone Filter
+select target_city as destination_city,count(*) as total_orders
+from Shipments
+where promised_date>=curdate() -interval 30 day
+group by target_city
+order by total_orders desc
+limit 1;
 ```
-<p align="center"> <img src="OUTPUTS/USECASES/query3.png" width="45%" /> <img src="OUTPUTS/USECASES/query4.png" width="45%" /> </p>
----
-Python – OpsBot
+<p align="center"> <img src="OUTPUTS/USECASES/query3.png" width="45%" /> </p>
 
-Overview:
+```
+-- partner scorecard
+select partner_name,round(successful_del*100.0/tot_shipments,2) as success_percent
+from(
+	select p.partner_name,count(s.shipment_id) as tot_shipments,
+		sum(case when s.actual_delivery_date>s.promised_date
+		then 1 else 0 
+		end) as delayed_shipments,
+		sum(case when s.shipment_status='Delivered'
+       then 1 else 0
+	   end) as successful_del,
+		sum(case when s.shipment_status='Returned'
+		then 1 else 0
+        end) as returned_del
+	from partners p
+	join shipments s on p.partner_id=s.partner_id
+	group by p.partner_name)
+as score
+order by delayed_shipments asc,success_percent desc;
+```
+<p align="center"><img src="OUTPUTS/USECASES/query4.png" width="45%" /> </p>
+---
+## Python – OpsBot
+
+**Overview:**
 Analyzes logs and generates alerts.
 
-<p align="center"> <img src="OUTPUTS/USECASES/python1.png" width="45%" /> <img src="OUTPUTS/USECASES/python2.png" width="45%" /> </p> ```
+| ➤ Log Analysis                                        | ➤ Summary                                             |
+| ----------------------------------------------------- | ----------------------------------------------------- |
+| <img src="OUTPUTS/USECASES/python1.png" width="100%"> | <img src="OUTPUTS/USECASES/python2.png" width="100%"> |
+
