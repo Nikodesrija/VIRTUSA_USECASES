@@ -1,18 +1,18 @@
 # 💻 Pre-Training Mini Projects & Use Cases
 
-![Python](https://img.shields.io/badge/Python-Programming-blue?logo=python)
-![Java](https://img.shields.io/badge/Java-OOP-orange?logo=java)
-![SQL](https://img.shields.io/badge/SQL-Database-green?logo=mysql)
+![Python](https://img.shields.io/badge/Python-blue?logo=python)
+![Java](https://img.shields.io/badge/Java-orange?logo=java)
+![SQL](https://img.shields.io/badge/SQL-green?logo=mysql)
 
 ---
 
-# 🧩 Section 1: Mini Projects
+#  Section 1: Mini Projects
 
 ---
 
-## ☕ Java – Library Management System
+## Java – Library Management System
 
-📖 **Overview:**  
+**Overview:**  
 A console-based system designed to manage library operations efficiently.
 
 📸 **Output Preview:**
@@ -59,9 +59,9 @@ A console-based system designed to manage library operations efficiently.
 
 ---
 
-## 🗄️ SQL – Movie Recommendation System
+## SQL – Movie Recommendation System
 
-🎬 **Overview:**  
+**Overview:**  
 A database-driven system that analyzes movie ratings and generates useful insights.
 
 🔹 **Key Queries:**
@@ -113,9 +113,9 @@ LIMIT 3;
 ```
 ---
 
-## 🐍 Python – Smart Expense Tracker
+##  Python – Smart Expense Tracker
 
-💰 **Overview:**  
+**Overview:**  
 A simple application to track and analyze daily expenses.
 
 📸 **Output Preview:**
@@ -141,11 +141,11 @@ A simple application to track and analyze daily expenses.
 </p>
 ---
 
-# ⚙️ Section 2: Use Case Implementations
+# Section 2: Use Case Implementations
 
 ---
 
-## ☕ Java – FinSafe (Digital Wallet)
+##  Java – FinSafe (Digital Wallet)
 
 💳 **Overview:**  
 A console-based application that simulates a digital wallet with transaction validation.
@@ -174,9 +174,9 @@ A console-based application that simulates a digital wallet with transaction val
 
 ---
 
-## 🗄️ SQL – E-Commerce Logistics Tracker
+## SQL – E-Commerce Logistics Tracker
 
-📦 **Overview:**  
+ **Overview:**  
 A database system used to track shipments and analyze delivery performance.
 
 🔹 **Key Queries:**
@@ -225,7 +225,7 @@ order by delayed_shipments asc,success_percent desc;
 ---
 ##Python – OpsBot (Log Analyzer)
 
-🛡️ Overview:
+Overview:
 A Python automation tool that processes server logs and generates security alerts.
 
 📸 Output Preview:
