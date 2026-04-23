@@ -63,14 +63,17 @@ A database-driven system that analyzes movie ratings and generates useful insigh
 
 🔹 **Key Queries:**
 ### Top rated movies
-```sql
+sql
 SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM movies v
 JOIN ratings r ON v.movie_id = r.movie_id
 GROUP BY v.title
 ORDER BY avg_rating DESC
 LIMIT 3;
+
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query1.png" width="45%" /> </p>
+
+sql
 ### Genre popularity
 SELECT genre, COUNT(*) AS total
 FROM movies
@@ -78,6 +81,8 @@ GROUP BY genre
 ORDER BY total DESC
 LIMIT 1;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query2.png" width="45%" /> </p>
+
+sql
 ### Recommendation based on similar users
 SELECT DISTINCT v.title
 FROM Ratings r
@@ -93,12 +98,17 @@ AND r.movie_id NOT IN (
     SELECT movie_id FROM ratings WHERE user_id = 1
 )
 AND r.rating >= 4;
+
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query3.png" width="45%" /> </p>
+
+sql
 ### User behaviour patterns
 SELECT user_id, COUNT(*) AS movies_watched
 FROM watch_history
 GROUP BY user_id;
 <p align="center"> <img src="OUTPUTS/MINI_PROJECTS/sql-query4.png" width="45%" /> </p>
+
+sql
 ### Trending movies
 SELECT v.title, COUNT(*) AS watch_count
 FROM watch_history w
@@ -109,7 +119,6 @@ LIMIT 3;
 <p align="center">
   <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="45%" />
 </p>
-```
 ---
 
 ##  Python – Smart Expense Tracker
