@@ -66,7 +66,7 @@ A console-based system designed to manage library operations efficiently.
 A database-driven system that analyzes movie ratings and generates useful insights.
 
 🔹 **Key Queries:**
-sql
+```sql
 -- Top rated movies
 SELECT v.title, ROUND(AVG(r.rating),2) AS avg_rating
 FROM movies v
@@ -110,8 +110,8 @@ LIMIT 3;
 <p align="center"> <img src="...sql-query5.png" width="70%" />
 <p align="center">
   <img src="OUTPUTS/MINI_PROJECTS/sql-query5.png" width="70%" />
-</p>```
-
+</p>
+```
 ---
 
 ## 🐍 Python – Smart Expense Tracker
