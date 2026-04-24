@@ -116,7 +116,7 @@ A simple application to track and analyze daily expenses.
 | ---------------------------------------------------------- | ---------------------------------------------------------- |
 | <img src="OUTPUTS/MINI_PROJECTS/python1.png" width="100%"> | <img src="OUTPUTS/MINI_PROJECTS/python2.png" width="100%"> |
 | ➤ Category-wise Analysis                                   | ➤ Highest Spending Category                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- |
+| --------------------------- | --------------------------- |
 | <img src="OUTPUTS/MINI_PROJECTS/python3.png" width="100%"> | <img src="OUTPUTS/MINI_PROJECTS/python4.png" width="100%"> |
 
 # 📂 Section 2: Use Case Implementations
@@ -129,7 +129,7 @@ A console-based application that simulates a digital wallet.
 | --------------------------------------------------- | --------------------------------------------------- |
 | <img src="OUTPUTS/USECASES/java1.png" width="100%"> | <img src="OUTPUTS/USECASES/java2.png" width="100%"> |
 | ➤ Transactions                                      | ➤ Balance                                           |
-| --------------------------------------------------- | --------------------------------------------------- |
+| ----------------------------------| -------------------------------- |
 | <img src="OUTPUTS/USECASES/java3.png" width="100%"> | <img src="OUTPUTS/USECASES/java4.png" width="100%"> |
 
 
