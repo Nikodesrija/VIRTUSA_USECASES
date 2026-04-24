@@ -1,6 +1,5 @@
-package model;
 import java.time.LocalDate;
-public class User {
+ class User {
     private int userid;
     private String name;
     private String email;

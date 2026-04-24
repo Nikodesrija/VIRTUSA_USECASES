@@ -1,7 +1,5 @@
-package service;
 import java.time.LocalDate;
 import java.util.*;
-import model.*;
 public class LibraryService {
     private Map<Integer, Book> books= new HashMap<>();
     private List<User> users= new ArrayList<>();
@@ -24,7 +22,6 @@ public class LibraryService {
             Book book = books.get(book_id);
             book.setTitle(title);
             book.setAuthor(author);
-            book.setAvailableCopies(book.getQuantity());
             System.out.println("Book ID: " + book_id + " updated.");
         } else {
             System.out.println("Book ID: " + book_id + " not found.");

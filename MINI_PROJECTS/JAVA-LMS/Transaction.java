@@ -1,4 +1,3 @@
-package model;
 import java.time.LocalDate;
 public class Transaction {
     private int book_id;
